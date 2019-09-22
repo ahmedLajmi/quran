@@ -9,7 +9,7 @@
 
 # Cache, session files and logs (Symfony3)
 /var/cache/*
-/var/logs/*
+/var/log/*
 /var/sessions/*
 !var/cache/.gitkeep
 !var/logs/.gitkeep
@@ -39,10 +39,11 @@
 /build/
 
 # Composer PHAR
-/composer.phar
+/composer.json
+/composer.lock
 
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~
 
-# Embedded web-server pid file
-/.web-server-pid
+# IDE
+/.idea/
