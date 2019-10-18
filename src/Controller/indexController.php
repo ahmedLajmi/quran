@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Entity\Page;
 use App\Entity\Soura;
 use Doctrine\Common\Collections\ArrayCollection;
+use League\Csv\Exception;
 use League\Csv\Reader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Console\Style\SymfonyStyle;
@@ -23,7 +24,11 @@ class indexController extends AbstractController
      */
     public function index()
     {
-        return $this->render("index.html.twig");
+        $souraRepositoy = $this->getDoctrine()->getRepository(Soura::class);
+        $souras = $souraRepositoy->findAll();
+        return $this->render("index.html.twig", [
+            "souras" => $souras
+        ]);
     }
 
 
@@ -33,8 +38,6 @@ class indexController extends AbstractController
      */
     public function execute ()
     {
-
-
 
 
         return $this->render("index.html.twig");

@@ -1,102 +1,51 @@
 {% extends "base.html.twig" %}
 {% block body %}
-    <main class="page-content">
-        <div class="divider-spectrum"></div>
 
-        <section id="section-start-journey"
-                 class="main section-50 section-sm-90 section-lg-top-120 section-lg-bottom-145">
-            <div class="shell">
-                <div class="range range-md-bottom range-sm-center">
-                    <div class="range range-sm-center">
-                        <div class="cell-sm-3 cell-md-3">
-                            <form data-form-output="form-output-global" data-form-type="subscribe" method="post"
-                                  action="bat/rd-mailform.php"
-                                  class="rd-mailform form-classic form-inline offset-top-15">
-                                <div class="form-group">
-                                    <input id="contact-email" type="email" name="email"
-                                           data-constraints="@Email @Required" class="form-control">
-                                    <label for="contact-email" class="form-label">Enter Your E-mail</label>
-                                </div>
-                                <button type="submit" aria-label="Subscribe" class="btn btn-icon-only btn-primary"><span
-                                            class="icon icon-xs icon-white fa-search"></span></button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="range range-sm-center">
+    <!-- Page Content -->
+    <div class="container">
 
-                        <div data-wow-duration="2s" data-wow-offset="200" class="cell-sm-10 cell-md-5 wow fadeInLeft">
-                            <h2 class="text-red-orange">Most Flexible</h2>
-                            <p class="h3 offset-top-0">Bootstrap theme</p>
-                            <p class="offset-top-40 text-secondary">Created by the industry leaders, Starbis Bootstrap theme
-                                includes a comprehensive set of tools which are super easy to pick up and run. This template
-                                gives you a huge leg up to create your own beautiful site using powerful options & tools,
-                                unlimited designs, and responsive framework.</p>
-                            <a href="#" class="btn btn-xl btn-primary">get starbis now</a></div>
-                        <div class="cell-sm-11 cell-md-7 offset-top-40 offset-sm-top-60 offset-md-top-0">
-                            <div class="image-group">
-                                <figure data-wow-duration=".6s" data-wow-delay=".0s" data-wow-offset="80"
-                                        class="wow fadeInRightSmall"><img src="images/243x199.png" alt="" width="243"
-                                                                          height="199"/></figure>
-                                <figure data-wow-duration=".9s" data-wow-delay=".4s" data-wow-offset="200"
-                                        class="wow fadeInRightMedium"><img src="images/508x341.png" alt="" width="508"
-                                                                           height="341"/></figure>
-                                <figure data-wow-duration=".9s" data-wow-delay=".8s" data-wow-offset="300"
-                                        class="wow fadeInRightSmall"><img src="images/689x469.png" alt="" width="689"
-                                                                          height="469"/></figure>
-                            </div>
+        <!-- Jumbotron Header -->
+        <header class="jumbotron my-4">
+            <h1 class="display-3">A Warm Welcome!</h1>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt
+                possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam
+                repellat.</p>
+            <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
+        </header>
+
+        <!-- Page Features -->
+        {% set count = 0 %}
+        <ul class="chapters row list-unstyled main">
+            {% for soura in souras %}
+
+
+
+
+                <li class="col-lg-3 col-md-6 mb-4" style="float: right;">
+                    <div class="card h-100">
+                        <h3 class="text-center"><a href="">{{ soura.name }}</a></h3>
+
+                        <div class="card-body">
+                            <ul class="list-unstyled text-center">
+                                <li style="font:bold 100%/2.0 Arial; color:#90a4ae;">{{ soura.place }}</li>
+                                <li style="font:bold 100%/2.0 Arial; color:#90a4ae;">عدد الآيات: {{ soura.number }}</li>
+                                <li style="font:bold 100%/2.0 Arial; color:#90a4ae;">ترتيب
+                                    النزول: {{ soura.orderDown }}</li>
+                                <li style="font:bold 100%/2.0 Arial; color:#90a4ae;">عدد
+                                    الصفحات: {{ soura.pages | length }}</li>
+                            </ul>
                         </div>
 
-
                     </div>
-
-                </div>
-            </div>
-        </section>
+                </li>
 
 
-        <div class="shell offset-top-60 offset-sm-top-75">
-            <h3 class="text-center">Starbis Team</h3>
-            <div class="range offset-top-40">
-                <div class="cell-xs-6 cell-sm-4 cell-md-3">
-                    <div class="thumbnail-variant-2-wrap">
-                        <div class="thumbnail thumbnail-variant-2">
-                            <figure class="thumbnail-image"><img src="images/246x300.jpg" alt="" width="246"
-                                                                 height="300"/></figure>
-                            <div class="thumbnail-inner">
-                                <div class="link-group"><span
-                                            class="icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                                            href="callto:#" class="link-white">+1 (409) 9875874</a></div>
-                                <div class="link-group"><span class="icon icon-xxs icon-primary fa-envelope-o"></span><a
-                                            href="/cdn-cgi/l/email-protection#a281" class="link-white"><span
-                                                class="__cf_email__"
-                                                data-cfemail="6f060109002f0b0a02000306010441001d08">philip@gmail.com</span></a>
-                                </div>
-                            </div>
-                            <div class="thumbnail-caption">
-                                <p class="text-header"><a href="team-member-profile.html">Amanda Smith</a></p>
-                                <div class="divider divider-md"></div>
-                                <p class="text-caption">Business Expert</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
 
-    <footer class="page-foot section-15 bg-gray-base">
-        <div class="shell text-center">
-            <div class="range">
-                <div class="cell-sm-12">
-                    <p class="rights text-white-03"><span>&#169;&nbsp;</span><span id="copyright-year"></span><span>Business.&nbsp;</span><a
-                                href="privacy-policy.html" class="link-white-03">Privacy Policy</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
-{% endblock %}
+            {% endfor %}
+        </ul>
+        <!-- /.row -->
 
-{% block javascripts %}
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
+    </div>
+    <!-- /.container -->
+
 {% endblock %}
